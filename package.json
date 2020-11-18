@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "jekyll serve"
+    "dev": "jekyll serve",
+    "deploy": "gh-pages -d _site"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Open-Water-Logger/Open-Water-Logger.github.io/issues"
   },
-  "homepage": "https://github.com/Open-Water-Logger/Open-Water-Logger.github.io#readme"
+  "homepage": "https://github.com/Open-Water-Logger/Open-Water-Logger.github.io#readme",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  }
 }
