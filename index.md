@@ -1,3 +1,6 @@
-## Welcome to the Wireless Open Water Logger!
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-Open Water Logger is a low-cost open-source wireless water temperature and depth sensor.
+layout: home
+---
