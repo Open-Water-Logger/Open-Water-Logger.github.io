@@ -1,0 +1,33 @@
+<header class="main page-well">
+  <div class="container">
+    <a href="/" id="logo">
+      <img src="{{ "/assets/images/logo.png" | relative_url }}" alt="Open Water Logger Logo" />
+    </a>
+    <nav>
+      <div id="mobile-menu"><span></span></div>
+      <ul class="{{ page.url }}">
+          {% for link in site.nav %}
+          <li class="{% if page.active-nav == link.title or link.permalink contains page.permalink %}active{% endif %} {{link.permalink}} {% if link.children %}has-children{% endif %}">
+            {% if link.children %}     
+              <span data-mobile-title="{{ link.mobile_title }}"><span>{{ link.title }}</span></span>     
+              <ul class="children">
+                {% for child in link.children %}
+                  <li>
+                    <a href="{{ child.url }}" data-mobile-title="{{ child.mobile_title }}"><span>{{ child.title }}</span></a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}            
+              <a href="{{ link.url }}" data-mobile-title="{{ link.mobile_title }}"><span>{{ link.title }}</span></a>     
+            {% endif %}
+          </li>
+          {% endfor %}
+          <!-- <li class="twitter">
+            <a href="https://twitter.com/WeatherCitizen" target="_blank">
+              <img src="{{ "/assets/images/twitter-icon.svg" | relative_url }}" alt="WeatheCitizen on Twitter" />
+            </a>
+          </li> -->
+      </ul>
+    </nav>
+  </div>
+</header>

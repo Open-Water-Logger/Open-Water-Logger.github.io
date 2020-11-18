@@ -1,0 +1,26 @@
+<header id="slider">
+  <div class="move">
+    {% for slide in page.slides %}
+    <div class="slide" style="background-image: url({{ slide.image }})">
+      <div class="content white-text page-well">
+        <div class="container">
+          <h1 class="larger">{{ slide.slide_h1 }}</h1>
+          <a href="{{ slide.button_link }}" class="rounded-button">{{ slide.button_text }}</a>
+          {% if slide.button_text contains 'Get' %}
+          <span>Available for <i class="fab fa-android"></i>&nbsp;<i class="fab fa-apple"></i></span>
+          {% else %}
+          <span>&nbsp;</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div id="mobile-content" class="content white-text page-well">
+    <div class="container">
+      <h1>Environmental Observations from Mobile Devices</h1>
+      <a href="/download-app.html" class="rounded-button">Get WeatherCitizen</a>
+      <span>Available for <i class="fab fa-android"></i>&nbsp;<i class="fab fa-apple"></i></span>
+    </div>
+  </div>
+</header>

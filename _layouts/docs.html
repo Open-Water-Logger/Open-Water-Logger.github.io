@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+<div id="docs" class="flex">
+
+  <!-- Nav Sidebar -->
+  <div class="padding-top-bottom sidebar-nav-container">
+  {% include sidebar-nav.html %}
+  </div>
+
+  <!-- Doc content -->
+  <main class="main content-col" aria-label="Content">
+    <div class="container padding-top-bottom page-well">
+    {{ content }}
+    </div>
+  </main>
+
+  <!-- Page TOC Sidebar -->
+  <div class="padding-top-bottom sidebar-toc-container">
+    {% include sidebar-toc.html %}
+  </div>
+</div>
+
+
+<!-- Add anchors to page -->
+<script>
+
+  // add anchors to h2, h3, h4
+  anchors.options.placement = 'right';
+  anchors.add('h2, h3, h4, h5');
+  
+  // generate toc-sidebar from anchor elements
+  let text, href;
+  let ul = document.getElementById('sidebar-toc');
+
+  function addNavItem(href, text, link_class) {
+    return `
+      <li>
+        <a href="${href}" class="${link_class}">${text}</a>
+      </li>
+    `;
+  }
+
+  // add a "top" link
+  ul.innerHTML += addNavItem('#', 'Top', "top");
+
+  for (let i = 0; i < anchors.elements.length; i++) {
+    let tag = anchors.elements[i].tagName;
+
+    // only make sidebar links for h2, h3
+    if (tag === "H2" || tag === "H3") { 
+      text = anchors.elements[i].textContent;
+      href = anchors.elements[i].querySelector('.anchorjs-link').getAttribute('href');
+      ul.innerHTML += addNavItem(href, text, `tag-${tag}`);
+    }
+  }
+
+  // Add "report issue" button
+  let issue_subject = `WeatherCitizen Documentation Issue`
+  let issue_body = `
+WeatherCitizen Documentation Issue
+
+Link: ${document.URL}
+Issue: <type issue here>
+`;
+
+  let issue_url = encodeURI(`mailto:info@weathercitizen.org?subject=${issue_subject}&body=${issue_body}`)
+  ul.innerHTML += `<br><br>`
+  ul.innerHTML += addNavItem(issue_url, "Report Documentation Issue", "report-issue");
+
+</script>

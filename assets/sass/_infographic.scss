@@ -1,0 +1,98 @@
+.user-stories {
+  padding-bottom: 2rem;
+
+  p {
+    font-size: 2rem;
+  }
+}
+
+#infographic {
+  @include justify-content(space-between);
+  @include align-items(stretch);
+  background-image: url(../images/infographic/arrows.svg);
+  background-repeat: no-repeat;
+  background-size: 66% auto;
+  background-position: 66% 22%;
+  h3 strong {color: $lightBlue}
+  img {margin: 0 auto}
+  > * {width: 30%;}
+  .graphic {
+    height: 38rem;
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(space-between);
+    > * {
+      margin: 0 auto;
+      max-width: 13rem;
+    }
+  }
+  .manual,.auto {
+    margin: 0 auto;
+    img {
+      max-width: 9rem;
+      transform: translateX(25%);
+    }
+  }
+  .auto img {max-width: 8.5rem}
+  .output {
+    img {max-width: 10rem;}
+    .graphic {
+      > * {margin: 0 auto}
+      @include justify-content(center);
+    }
+  }
+  .result {
+    .graphic {
+      position: relative;
+      > * {
+        margin: 0;
+      }
+    }
+  }
+  .social img {max-width: 7rem;}
+  .global {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    img {max-width: 13rem;}
+  }
+  .analyze img {max-width: 8rem;}
+  .content {
+    padding-top: 5rem;
+  }
+}
+@media only screen and (max-width: 685px) {
+  #infographic {
+    background-image: none;
+    > * {
+      width: 100%;
+      margin-top: 5rem;
+    }
+    .content {padding-top: 3rem;}
+    .graphic {
+      height: auto;
+      @include flex-direction(row);
+      @include align-items(flex-end);
+      @include justify-content(space-evenly);
+      > * {
+        max-width: 20rem;
+        margin: 0;
+        transform: none;
+        position: relative !important;
+      }
+    }
+    .output .graphic, .result .graphic, .observe .graphic {
+      @include justify-content(space-evenly);
+      > * {
+        margin: 0 1rem 0;
+        width: 10rem;
+      }
+      .h6 {font-size: 1.2rem}
+    }
+    .result .graphic img {height: 7rem;}
+    .social {order: 2}
+    .global {order: 1}
+    .analyze {order: 3}
+  }
+}

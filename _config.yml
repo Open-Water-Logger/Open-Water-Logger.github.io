@@ -1,55 +1,110 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+title: Open Water Logger
+description: Open Water Logger website
+baseurl: ""
+url: "https://openwaterlogger.org"
 
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+# Sass settings
+sass:
+  sass_dir: assets/sass
+  style: :compressed
 
 # Build settings
-theme: minima
-plugins:
-  - jekyll-feed
-
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
 # exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+#   - package.json
+#   - README.md
+#   - CNAME
+#   - assets/sass-
+
+# collections:
+#   docs:
+#     output: true
+
+# DOCS
+
+
+# markdown docs
+# markdown: kramdown
+# kramdown:
+#   auto_ids: true
+
+# sidebar layout
+# sidebar:
+#   - title: Getting Started
+#     items:
+#       - title: Introduction
+#         url: index.html
+#       - title: Install / Setup
+#         url: install.html
+#       - title: Configure
+#         url: configure.html
+#       - title: Observe
+#         url: observe.html
+#       - title: Customize Snapshot Inputs
+#         url: customize-snapshot.html
+#       - title: Connect External Sensors
+#         url: connect-external.html
+#       - title: Access Data
+#         url: access-data.html
+#   - title: Topics
+#     items:
+#       - title: Units
+#         url: units.html
+#       - title: External Sensors
+#         url: external-sensors.html
+#       - title: Data Model
+#         url: data-model.html
+#       - title: Sensor Bursts
+#         url: sensor-burst.html
+#   - title: References
+#     items:
+#       - title: API Reference
+#         url: api.html
+#   - title: Support
+#     items:
+#       - title: Data Collection & Sharing
+#         url: privacy.html
+#       - title: Changelog
+#         url: changelog.html
+
+# primary navigation
+# nav:
+#   - title: Data Map
+#     mobile_title: Map
+#     permalink:
+#     url: https://map.weathercitizen.org/
+#   - title: How it Works
+#     mobile_title: How it Works
+#     permalink: how-it-works
+#     url: /how-it-works.html
+#   - title: Support
+#     mobile_title: Support
+#     children: 
+#       - title: Documentation
+#         mobile_title: Docs
+#         permalink: docs
+#         url: /docs
+#       - title: Forum
+#         mobile_title: Forum
+#         permalink: forum
+#         url: https://forum.weathercitizen.org/
+#       - title: Contact
+#         mobile_title: Contact
+#         permalink: contact.html
+#         url: /contact.html
+#   - title: Get the App
+#     mobile_title: Download
+#     permalink:  download-app
+#     url: /download-app.html
+
+# footer navigation
+# footer_nav:
+#   - title: Contact
+#     url: /contact.html
+#   - title: Documentation
+#     url: /docs
+#   - title: Legal
+#     url: /legal.html
+
+#contact information
+# contact_email: info@weathercitizen.org

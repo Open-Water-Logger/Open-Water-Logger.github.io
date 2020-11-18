@@ -1,0 +1,224 @@
+@mixin zeroList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  > li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: block;
+      &:before {
+          display: none;
+      }
+  }
+}
+@mixin transition($prop,$time,$delay: 0s) {
+  -webkit-transition: $prop $time ease-out $delay;
+  -moz-transition: $prop $time ease-out $delay;
+  -o-transition: $prop $time ease-out $delay;
+  -ms-transition: $prop $time ease-out $delay;
+  transition: $prop $time ease-out $delay;    
+}
+@mixin transitionMult($prop,$time,$prop2,$time2,$delay: 0s,$delay2: 0s) {
+  -webkit-transition: $prop $time ease-out $delay, $prop2 $time2 ease-out $delay2;
+  -moz-transition: $prop $time ease-out $delay, $prop2 $time2 ease-out $delay2;
+  -ms-transition: $prop $time ease-out $delay, $prop2 $time2 ease-out $delay2;
+  -o-transition: $prop $time ease-out $delay, $prop2 $time2 ease-out $delay2;
+  transition: $prop $time ease-out $delay, $prop2 $time2 ease-out $delay2;
+}
+@mixin transform($prop) {
+  transform: $prop;
+  -webkit-transform: $prop;
+  -ms-transform: $prop;
+  -o-transform: $prop;
+  -moz-transform: $prop; 
+}
+@mixin opacity ($value) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$value * 100})";
+  filter: alpha(opacity=#{$value * 100});
+  opacity: $value;
+}
+@mixin icon {
+  font-family: 'icon' !important;
+  font-weight: normal !important;
+  text-transform: none !important;    
+}
+@mixin placeholder($color) {
+  ::-webkit-input-placeholder {color: $color;}
+  :-moz-placeholder {color: $color;}
+  ::-moz-placeholder {color: $color;}
+  :-ms-input-placeholder {color: $color;}
+}
+@mixin blackNwhite {
+  -moz-filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+  filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+}
+@mixin colorize {
+  -moz-filter: grayscale(0);
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  filter: none;
+}
+@mixin shadow {
+  -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.12);
+  -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.12);
+  box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.12);
+}
+@mixin shadowlift {
+  -webkit-box-shadow:  0 1rem 2.5rem 0 rgba(0, 0, 0,.1);
+  -moz-box-shadow:  0 1rem 2.5rem 0 rgba(0, 0, 0,.1);
+  box-shadow:  0 1rem 2.5rem 0 rgba(0, 0, 0,.1);
+}
+// --------------------------------------------------
+// Flexbox SASS mixins
+// The spec: http://www.w3.org/TR/css3-flexbox
+// --------------------------------------------------
+
+// Flexbox display
+@mixin flexbox() {
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+@mixin flex($values) {
+-webkit-box-flex: $values;
+   -moz-box-flex: $values;
+    -webkit-flex: $values;
+    -ms-flex: $values;
+        flex: $values;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+-webkit-flex-direction: $direction;
+   -moz-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+        flex-direction: $direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+-webkit-flex-wrap: $wrap;
+   -moz-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+        flex-wrap: $wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+-webkit-flex-flow: $flow;
+   -moz-flex-flow: $flow;
+    -ms-flex-flow: $flow;
+        flex-flow: $flow;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($val) {
+-webkit-box-ordinal-group: $val;  
+   -moz-box-ordinal-group: $val;     
+       -ms-flex-order: $val;     
+        -webkit-order: $val;  
+          order: $val;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+@mixin flex-grow($grow) {
+-webkit-flex-grow: $grow;
+   -moz-flex-grow: $grow;
+    -ms-flex-grow: $grow;
+        flex-grow: $grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number> 
+@mixin flex-shrink($shrink) {
+-webkit-flex-shrink: $shrink;
+   -moz-flex-shrink: $shrink;
+    -ms-flex-shrink: $shrink;
+        flex-shrink: $shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width> 
+@mixin flex-basis($width) {
+-webkit-flex-basis: $width;
+   -moz-flex-basis: $width;
+    -ms-flex-basis: $width;
+        flex-basis: $width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around 
+@mixin justify-content($justify) {
+-webkit-justify-content: $justify;
+   -moz-justify-content: $justify;
+    -ms-justify-content: $justify;
+        justify-content: $justify;
+          -ms-flex-pack: $justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch 
+@mixin align-content($align) {
+-webkit-align-content: $align;
+   -moz-align-content: $align;
+    -ms-align-content: $align;
+        align-content: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch 
+@mixin align-items($align) {
+-webkit-align-items: $align;
+   -moz-align-items: $align;
+    -ms-align-items: $align;
+        align-items: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch 
+@mixin align-self($align) {
+-webkit-align-self: $align;
+   -moz-align-self: $align;
+    -ms-align-self: $align;
+        align-self: $align;
+}
+
+@mixin filter($filter-type,$filter-amount) { 
+-webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+-moz-filter: $filter-type+unquote('(#{$filter-amount})');
+-ms-filter: $filter-type+unquote('(#{$filter-amount})');
+-o-filter: $filter-type+unquote('(#{$filter-amount})');
+filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+@mixin backface-fix() {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}

@@ -1,0 +1,443 @@
+/*
+ * Header and navigations styles
+ * HTML in the header.html file
+ */
+
+#mobile-content {display: none !important;}
+#slider {
+  position: relative;
+  .slide {
+    background-size: cover;
+    background-position: center center;
+  }
+  .content {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: right;
+    min-height: 30vh;
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(flex-end);
+    h1 {
+      max-width: 63rem;
+      margin-bottom: .35em;
+    }
+    span {
+      display: block;
+      color: #fff;
+      margin-top: 1rem;
+    }
+  }
+  .container {
+    width: 100%;
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-items(flex-end);
+  }
+  .glide__arrows {
+    button {
+      background-color: transparent;
+      border: 0;
+      outline: none;
+      margin: 0;
+      padding: 0;
+      font-size: 5rem;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      padding: 3rem;
+      cursor: pointer;
+      color: #fff;
+      opacity: .4;
+      transform: translateY(-50%);
+      @include transition(opacity,.3s);
+      &.glide__arrow--right {
+        right: 0;
+        left: auto;
+      }
+      &:hover {opacity: 1}
+    }
+  }
+}
+
+#data-map {
+  background-size: cover;
+  background-position: center center;
+}
+
+#dual-sliders {
+  @include flexbox;
+  max-width: 900px;
+  margin: 6rem auto;
+  .content-slides {
+    width: 50%;
+    @include flex(1 1 50%);
+    @include zeroList;
+    overflow: hidden;
+    position: relative;
+    &:after {
+      content: ' ';
+      display: block;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 34%,rgba(255,255,255,0) 65%,rgba(255,255,255,1) 100%);
+    }
+    li {
+      padding: 15px 85px 15px 45px;
+      box-sizing: border-box;
+      img {
+        height: 100px;
+        width: auto;
+        margin: 0 auto;
+      }
+      h2 {
+        margin-top: 0;
+      }
+    }
+    .slick-list {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      overflow: visible;
+    }
+    .slick-dots {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      @include zeroList;
+      padding: 10px 5px;
+      border: 1px solid #eee;
+      border-radius: 50px;
+      button {
+        background-color: #eee;
+        border: none;
+        text-indent: -999px;
+        margin: 5px;
+        border-radius: 999px;
+        width: 20px;
+        height: 20px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: background-color .3s;
+        &:hover {background-color: #ccc}
+      }
+      .slick-active {
+        button {background-color: $lightBlue}
+      }
+    }
+  }
+  .screenshot-slides {
+    position: relative;
+    @include flex(0 0 313px);
+    width: 313px;
+    > img {
+     position: relative;
+     z-index: 2; 
+    }
+    .slides {
+      position: absolute;
+      top: 17px;
+      left: 0;
+      width: 313px;
+      height: 600px;
+      display: block;
+      img {
+        width: 313px;
+        height: 600px;
+        object-fit: cover;
+      }
+    }
+  }
+  @media only screen and (max-width: 850px) {
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    .screenshot-slides {
+      margin: 0 auto;
+      width: 21rem;
+      .slides img, .slides {
+        width: 21rem;
+        height: 373px;
+      }
+      .slides {top: 1px;}
+    }
+    .content-slides {
+      width: 100%;
+      margin-top: 4rem;
+      &:after {display: none;}
+    }
+  }
+  @media only screen and (max-width: 450px) {
+    .content-slides {
+      li {
+        padding: 15px 10px 15px 10px;
+      }
+    }
+  }
+
+}
+
+.video-display {
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+  h1 {
+    width: 100%;
+    flex: 0 0 100%;
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+    font-weight: normal;
+    span {
+      display: block;
+      color: $lightBlue;
+      margin: 1rem 0;
+    }
+  }
+  .content {
+    width: 52%;
+    flex: 0 0 52%;
+    box-sizing: border-box;
+    padding: 5rem 0;
+  }
+  .video {
+    position: relative;
+    width: 38%;
+    margin: 5rem 0;
+    flex: 0 0 38%;
+    box-sizing: border-box;
+    img {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: 100%;
+    }
+    video {
+      position: absolute;
+      top: 2.7%;
+      left: 6.2%;
+      width: 87.7%;
+      height: 96%;
+      object-fit: cover;
+      z-index: 1;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    @include flex-direction(column);
+    .video {margin: 0 auto;}
+    .content {
+      width: 100%;
+      @include flex(0 0 100%);
+    }
+    .content {order: 2;}
+    .video {order: 1;}
+  }
+}
+.video + #download {min-height: 0}
+#download {
+  min-height: calc(100vh - 62px - 69px);
+  box-sizing: border-box;
+  @include flexbox;
+  @include align-items(center);
+  .flex {
+    > img {
+      width: 60%;
+      @include flex(1 1 60%);
+    }
+    > .content {
+      width: 23rem;
+      padding-left: 8rem;
+      @include flex(0 0 23rem);
+      img {
+        max-width: 18rem;
+        height: auto;
+        display: block;
+        margin: 2rem auto;
+      }
+    }
+  }
+  @media only screen and (max-width: 785px) {
+    .flex {
+      @include justify-content(center);
+      @include align-items(center);
+      > .content {
+        padding: 0;
+      }
+      > a {
+        width: 60%;
+        @include flex(0 0 60%);
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 2.5rem 0;
+  background-color: $blue;
+  p {
+    font-size: 1rem;
+    color: #fff;
+    text-align: right;
+    line-height: 1.2em;
+    a {color: $lightBlue}
+  }
+  nav {
+    @include flexbox;
+    @include align-items(center);
+    img {max-width: 5rem}
+    a {
+      display: block;
+      font: normal normal 1.6rem/1em $font;
+      color: #fff;
+      margin-right: 2.5rem;
+      @include transition(color,.3s);
+      &:hover {color: $lightBlue}
+    }
+  }
+  .copyright {
+    img {
+      margin-bottom: 1rem;
+      max-width: 10rem;
+    }
+    padding-left: 5rem;
+    text-align: right;
+  }
+  @media only screen and (max-width: 685px) {
+    .flex {
+      align-items: flex-end;
+    }
+    nav a {
+      margin-right: 0;
+    }
+  }
+
+}
+
+#hero {
+  background-size: cover;
+  background-position: center center;
+  h1:last-child {margin-bottom: 0;}
+}
+
+#disclaimers {
+  img {margin-right: 1.5rem}
+  p {
+    font-size: 1.2rem;
+    color: #000;
+    opacity: .6;
+  }
+  h6 {margin-top: 3rem}
+}
+.case-study {
+  margin-top: 8rem;
+  @include align-items(flex-start);
+  img {
+    width: 200px;
+    margin-top: .5rem;
+    padding-right: 4.5rem;
+  }
+}
+#case-studies-nav {
+  max-width: 110rem;
+  margin: 0 auto;
+  @include justify-content(space-between);
+  a {
+    display: inline-block;
+    font-size: 1.6rem;
+    padding: 1.5rem 2rem;
+    &:hover {text-decoration: underline;}
+  }
+}
+@media only screen and (max-width: 685px) {
+  #mobile-content {display: block !important;}
+  #slider {
+    width: 100%;
+    background: transparent url(../images/slides/mobile-slide.jpg) no-repeat center center;
+    background-size: cover;
+    min-height: 0;
+    padding-bottom: 70%;
+    .move {display: none;}
+    .content {
+      padding: 5rem 0;
+      text-align: center;
+      min-height: 0;
+      .container {@include align-items(center)}
+    }
+  }
+  #features>ul li{
+    @include flex(100% 0 0);
+    padding-top: 3rem !important;
+    img {height: 7rem}
+  }
+}
+.support-images {
+  @include flexbox;
+  @include align-items(center);
+  img {
+    max-width: 100px;
+  }
+}
+.store-badge {
+  border-radius: 1em;
+}
+#contact .flex {
+  @include align-items(flex-start);
+  > * {margin-top: 3rem}
+  .form {
+    @include flex(0 0 60%);
+    form {
+      width: 100%;
+      @include flexbox;
+      @include flex-wrap(wrap);
+      @include justify-content(space-between);
+      text-align: left;
+      > div {
+        width: 48%;
+        @include flex(0 0 45%);
+        margin-bottom: 3rem;
+      }
+      .full-width {
+        width: 100%;
+        @include flex(0 0 100%);
+      }
+    }
+    label {
+      display: block;
+      font: normal 400  1.6rem/1em $font;
+      color: $grey;
+      margin-bottom: 1rem;
+    }
+    input:not([type=submit]),textarea {
+      background-color: $lightGrey;
+      border: 0;
+      font: normal 400  1.6rem/1em $font;
+      color: $grey;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    input:not([type=submit]) {
+      padding: 1.2rem;
+    }
+    textarea {
+      width: 100%;
+      display: block;
+      height: 14rem;
+      padding: 1.2rem;
+    }
+    input[type=submit] {
+      margin: 0 0 0 auto;
+      display: block;
+    }
+  }
+}
