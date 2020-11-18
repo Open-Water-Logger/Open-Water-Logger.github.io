@@ -1,0 +1,20 @@
+{
+  "name": "open-water-logger.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "jekyll serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Open-Water-Logger/Open-Water-Logger.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Open-Water-Logger/Open-Water-Logger.github.io/issues"
+  },
+  "homepage": "https://github.com/Open-Water-Logger/Open-Water-Logger.github.io#readme"
+}
