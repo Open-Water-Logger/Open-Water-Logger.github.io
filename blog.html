@@ -42,11 +42,35 @@
     </header>
     <main class="main" aria-label="Content">
       <section class="container small padding-top-bottom page-well">
-	    <h1 class="larger">The Wireless Open Water Logger (or WOWL) is a low-cost, open-source ocean temperature logger for large-scale opportunistic ocean sampling</h1>
+	    <h1 class="larger">The WOWL Development Blog</h1>
 		<div class="content">
-		  <a href="/">
-          <img src="/assets/images/cover_pic.png" alt="Cover Graphic" />
-		  </a>
+		  <h2>20 December 2020 – Testing at the University of Maine Darling Marine Center Dock</h2>
+		  <h4>
+		    <p>Our colleagues at DMC deployed one of our first WOWL units off their dock on the Damariscotta River over the weekend.  The WOWL was co-deployed with a scientific grade measurement sonde (YSI EXO series) and an Onset HOBO UA-002-08 data logger.  For this test, we’re considering the YSI sonde to represent the “ground truth” temperature during the deployment.  The HOBO logger retails around our target price point for the WOWL and has a specified temperature accuracy of +/- 0.5 C.</p>
+			<img src="/assets/images/12-20-2020_1.png">
+			<p>The plots below show temperature and depth data from this deployment. Unfortunately, the YSI sonde ran out of batteries around 22 hours after the start of the experiment (we had set the sample rate a little high and it chewed through its batteries!).  Most of the WOWL prototype’s six temperature sensors performed very nicely with respect to the ground truth. The numbers in parenthesis are the RMS error relative to ground truth.  We’ll use this data to help inform our sensor down-select decision for the next generation device.  As of right now, the dedicated temperature IC appears to be the front runner – representing a good balance between cost and performance.</p>
+			<p>Once fully deployed, the WOWL and the ground truth depth readings tracked very nicely, well within our target 0.1 meters of seawater (msw) objective.  </p>
+			<img src="/assets/images/12-20-2020_2.png">
+		  </h4>
+		  <p></p>
+		  <h2>21 November 2020 - It’s Alive!</h2>
+		  <h4>
+		    <p>Our first WOWL lives!  Yesterday we placed our first fully-encapsulated WOWL prototype in a “milkcan” pressure vessel and let it sit at various pressures (30, 35, 20, and, briefly, 60 psi (gage)).  We then downloaded the data via our (still in development) application and took a quick look at it in Matlab (plots below).  The pressure data tracks our expectations nicely – if you look closely you can see the period cycling of our shop air supply. We see the expected increases and decreases in temperature with the compression and decompression of the vessel.  All and all this was a pleasant demonstration of functionality!</p>
+		    <img src="/assets/images/11-21-2020-1.png">
+			<p></p>
+			<img src="/assets/images/11-21-2020-2.png">
+		  </h4>
+		  <p></p>
+		  <h2>10 November 2020 – Our First Urethane Castings!</h2>
+		  <h4>
+		    <p>We made our first successful mold of the WOWL housings today.  We’re using a semi-rigid, semi-transparent urethan rubber as it represents a good balance between durability, flexibility, and ease of use.  The WOWL housing is designed to be inserted into the frame channels on commercial lobster traps – the “arrow” shape allows for relatively easy insertion while locking the WOWL in place. </p>
+			<img src="/assets/images/11-10-2020-1.png">
+		  </h4>
+		  
+		  <h2></h2>
+		  <h4>
+		    <p>  </p>
+		  </h4>
         </div>
       </section>
     </main>
