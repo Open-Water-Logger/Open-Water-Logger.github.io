@@ -44,6 +44,15 @@
       <section class="container small padding-top-bottom page-well">
 	    <h1 class="larger">The WOWL Development Blog</h1>
 		<div class="content">
+		  <h2>10 March 2022 – A lot can happen in a year!</h2>
+		  <h4>
+		    <p>Since our last post, we’ve been awarded an SBIR Phase II Award to continue developing the WOWL system. This means we have the resources to optimize the WOWL sensors, redesign the smartphone app, and deploy hardware with lobster harvesters all over New England. </p>
+			<p>We’re roughly 9 months into this Phase II project and so far, the main focus has been on refining the hardware and software we developed in Phase I, and getting ready to do a larger scale deployment this summer. Like lots of people, we were hit hard by the ongoing IC shortages; both the System on a Chip (SoC) and the temperature sensor we used on our first-generation board are no longer available. This means that we had to select new, similar components and re-write the firmware for the new SoC. This continues to be a significant rework effort, and we’re only just now getting back to where we were at the end of Phase I. The good news is that we were able to buy large (300+) quantities of all the important components on our board, and so we should not run into this issue again for some time. </p>
+			<p>Besides swapping out the SoC and the temp sensor, we also removed the other temp sensors that were present in the Phase I design, greatly reducing the Bill of Materials cost for the WOWL. We also swapped out the charging electronics to make the WOWL Qi compatible. This means you can charge a WOWL on the same Qi charging mat that’d you’d use with your smartphone! The new board is shown below. </p>
+			<img src="/assets/images/3-10-2022.png">
+			<p>In the next month we’ll be ordering our second batch of these Gen 2 boards and getting them ready for deployment this summer. If you have any questions or are interested in testing a WOWL, please reach out to use at <a href="mailto:wowl@creare.com">wowl@creare.com</a>.</p>
+		  </h4>
+		  <p></p>
 		  <h2>18 February 2021 – Proof of Concept Demonstration</h2>
 		  <h4>
 		    <p>Beginning the last week of January 2021, our colleagues at UMaine arranged for four prototype (Phase I) WOWLs to be deployed by commercial lobstermen operating out of Friendship, ME. The first figure shows photographs of two of these units and where the fishing gear was deployed. The WOWLs logged bottom temperature and depth data every minute for over 12 days. The second figure shows bottom temperature and depth time series for each of these nodes. A few features are noted. First, the shallower site (sensor 9) is often cooler than the deeper sites (as is expected for the time of year). Second, the bottom temperature resolution is sufficient to capture interesting features, such as pockets of warmer (by around 0.5 C) water flowing by sensors 3, 5, and 6 throughout the deployment. Finally, the depth sensor resolution is more than sufficient to capture tidal variation. Indeed, closer inspection of the data reveal sensor-to-sensor tide height variation on the order of only 4 cm.</p>
