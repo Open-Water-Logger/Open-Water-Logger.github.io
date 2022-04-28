@@ -44,6 +44,22 @@
       <section class="container small padding-top-bottom page-well">
 	    <h1 class="larger">The WOWL Development Blog</h1>
 		<div class="content">
+		  <h2>28 April 2022 – Casting the WOWL</h2>
+		  <h4>
+		    <p>In parallel with the updates to WOWL firmware and board design we touched on last month, our manufacturing team has been busy refining the Phase I mold design and casting process in anticipation of higher quantity production. Looking back, our Phase I WOWL units contained a PCB assembly encapsulated in a semi-rigid urethane resin (Smooth-On Task 11), meant to protect the electronics from the shock and moisture inherent to the lobster harvesting environment. The arrow design fit inside structural channels of commercial lobster traps, keeping the units constrained and out of the way.</p>
+			<img src="/assets/images/2022-04-28_01.JPG">
+			<p>To fabricate these units, we used a rigid open top mold with a removeable “knockout” plate. After adhering small pieces of rubber to the PCB assembly, we secured the electronics to the knockout plate and inserted the plate into the mold. The rubber pieces provided a small offset between the knockout plate and the electronics, allowing the urethane casting resin to flow underneath the board and fully encapsulate the electronics. After pouring and curing the urethane encapsulant, we could then press on the knockout plate through holes in the mold base to release the cast WOWL unit from the mold.</p>
+			<img src="/assets/images/2022-04-28_02.JPG">
+			<p>By the end of the Phase I, we found a couple of issues with our design. First, standing off the electronics while casting was tedious and did a poor job of keeping the electronics centered in the mold. We also found that the arrow design was difficult to get in and out of the trap, as the urethane can get very stiff when cold. With these issues in mind, we decided to update the design for Phase II while continuing to use the Task-11 encapsulant. </p>
+			<p>The Phase II WOWL form factor is smaller and simpler, keeping material cost low and reflecting user preference for securing the units to the lobster trap externally with zip ties. To eliminate the manual steps of cutting and adhering rubber pieces to the PCB assembly, we moved to a two-step cure process. We first cure a thin layer of urethane within the mold. This layer determines the inductive charging coil depth within the WOWL unit. Next, we adhere the electronics to the cured base layer, charging coil side down, using a cyanoacrylate instant adhesive (AKA Superglue). This step prevents the electronics from moving around as we pour a second urethane layer to fully encapsulate the electronics. After curing this second urethane layer, we can demold the cured WOWL unit and machine holes for zip ties.</p>
+			<p>The encapsulant requires a 16-hour cure (under pressure, to force out bubbles), and we need to do two pours for each WOWL. If we want to make WOWL’s in significant quantities, it’s important to have a low-cost mold fabrication method to produce many molds. After 3D printing 6 mold positives, we vacuum formed 15 mold cavities for initial testing, with more planned for production. By investing in a larger pressure vessel (California Air Tools 365CR) and low cost fixturing, we will be able to cure 36 WOWLs at once. </p>
+		    <p>Check out our first urethane castings below, alongside the vacuum formed molds and pressure vessel used in fabrication. Note the steps in the mold walls, marking the height the urethane resin will reach at the first and second pours. We can’t wait to get the Gen 2 boards in house so we can start turning out functional WOWLs!</p>
+			<img src="/assets/images/2022-04-28_03.JPG">
+			<img src="/assets/images/2022-04-28_04.JPG">
+			<img src="/assets/images/2022-04-28_05.JPG">
+			<img src="/assets/images/2022-04-28_06.JPG">
+			<img src="/assets/images/2022-04-28_07.JPG">
+		  </h4>
 		  <h2>10 March 2022 – A lot can happen in a year!</h2>
 		  <h4>
 		    <p>Since our last post, we’ve been awarded an SBIR Phase II Award to continue developing the WOWL system. This means we have the resources to optimize the WOWL sensors, redesign the smartphone app, and deploy hardware with lobster harvesters all over New England. </p>
@@ -52,7 +68,6 @@
 			<img src="/assets/images/3-10-2022.jpg">
 			<p>In the next month we’ll be ordering our second batch of these Gen 2 boards and getting them ready for deployment this summer. If you have any questions or are interested in testing a WOWL, please reach out to use at <a href="mailto:wowl@creare.com">wowl@creare.com</a>.</p>
 		  </h4>
-		  <p></p>
 		  <h2>18 February 2021 – Proof of Concept Demonstration</h2>
 		  <h4>
 		    <p>Beginning the last week of January 2021, our colleagues at UMaine arranged for four prototype (Phase I) WOWLs to be deployed by commercial lobstermen operating out of Friendship, ME. The first figure shows photographs of two of these units and where the fishing gear was deployed. The WOWLs logged bottom temperature and depth data every minute for over 12 days. The second figure shows bottom temperature and depth time series for each of these nodes. A few features are noted. First, the shallower site (sensor 9) is often cooler than the deeper sites (as is expected for the time of year). Second, the bottom temperature resolution is sufficient to capture interesting features, such as pockets of warmer (by around 0.5 C) water flowing by sensors 3, 5, and 6 throughout the deployment. Finally, the depth sensor resolution is more than sufficient to capture tidal variation. Indeed, closer inspection of the data reveal sensor-to-sensor tide height variation on the order of only 4 cm.</p>
